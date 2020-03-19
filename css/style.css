@@ -2,11 +2,16 @@
     margin: 0px;
     padding: 0px;
     font-family: Lato, Helvetica, Arial, sans-serif;
-    border:1px solid black;
+    outline:1px solid black;
+    color: white;
+}
+header{
+    outline:none
 }
 
 body{
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
     margin: 0%;
     padding: 0%;
     display: flex;
@@ -14,7 +19,7 @@ body{
 }
 #p1{
     width: 100%;
-    height: auto;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items:center;
@@ -26,24 +31,81 @@ body{
     color: black;
     margin-top: 20px;
     justify-content: center;
+    margin: 5vh;
+}
+#p1 h2{
+    font-size: 150%;
+    color: black;
+    margin-top: 20px;
+    justify-content: center;
+    margin: 1vh;
 }
 #p1 form{
     width: 80%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     align-items:center;
     justify-content: space-around;
-    border:2px solid black;
-    border-radius: 10px;
-    background-color: cornflowerblue;
-
+    background-color:#D1D7DC;
+    padding: 10px;
+    outline: none;
 }
-.selcao{
-    width: 80%;
-    height: auto;
+
+
+/* Customize the label (the selecaoEstudos) */
+.selecaoEstudos {
     display: flex;
-    flex-direction: row;
-    border:2px solid black;
-    border-radius: 10px;
+    flex-direction:row-reverse;
+    width: 80%;
+    height: 10%;
+    font-size: 5vw;
+    user-select: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    outline: none;
+    color: rgb(48, 48, 48);
+  }
+  
+  /* Hide the browser's default radio button */
+  .selecaoEstudos input {
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    height: 4.5vw;
+    width: 4.5vw;
+    margin-left: -28%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    outline: none;
+    border: 1px solid gray;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .selecaoEstudos input:checked ~ .checkmark {
+    background-image: url('/img/checked.png');
+    background-size: cover;
+    border: none;
+
+  }
+  .selecaoEstudos input:checked ~ .selecaoEstudos{
+      background-color: #5562eb ;
+  }
+
+#bntIniciar{
+    width: 50vw;
+    height: 5vh;
+    border-radius: 10vw;
+    border: 1px solid black;
+    outline: none;
+    background-color: #5562eb;
+    color: white;
+    font-size: 5vw;
 }
 
