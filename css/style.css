@@ -1,9 +1,9 @@
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     font-family: Lato, Helvetica, Arial, sans-serif;
     outline:1px solid black;
-    color: white;
+    color: rgb(52, 47, 53);
 }
 header{
     outline:none
@@ -15,97 +15,9 @@ body{
     margin: 0%;
     padding: 0%;
     display: flex;
-    flex-direction: column;
-}
-#p1{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    justify-content: space-around;
-}
-
-#p1 h1{
-    font-size: 400%;
-    color: black;
-    margin-top: 20px;
-    justify-content: center;
-    margin: 5vh;
-}
-#p1 h2{
-    font-size: 150%;
-    color: black;
-    margin-top: 20px;
-    justify-content: center;
-    margin: 1vh;
-}
-#p1 form{
-    width: 80%;
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    justify-content: space-around;
-    background-color:#D1D7DC;
-    padding: 10px;
-    outline: none;
-}
-
-
-/* Customize the label (the selecaoEstudos) */
-.selecaoEstudos {
-    display: flex;
-    flex-direction:row-reverse;
-    width: 80%;
-    height: 10%;
-    font-size: 5vw;
-    user-select: none;
-    justify-content: center;
     align-items: center;
-    background-color: rgb(255, 255, 255);
-    outline: none;
-    color: rgb(48, 48, 48);
-  }
-  
-  /* Hide the browser's default radio button */
-  .selecaoEstudos input {
-    opacity: 0;
-    height: 0;
-    width: 0;
-  }
-  
-  /* Create a custom radio button */
-  .checkmark {
-    position: absolute;
-    height: 4.5vw;
-    width: 4.5vw;
-    margin-left: -28%;
-    background-color: rgb(255, 255, 255);
-    border-radius: 50%;
-    outline: none;
-    border: 1px solid gray;
-  }
-  
-  /* When the radio button is checked, add a blue background */
-  .selecaoEstudos input:checked ~ .checkmark {
-    background-image: url('/img/checked.png');
-    background-size: cover;
-    border: none;
+    background-color: #F4F5F6;
 
-  }
-  .selecaoEstudos input:checked ~ .selecaoEstudos{
-      background-color: #5562eb ;
-  }
-
-#bntIniciar{
-    width: 50vw;
-    height: 5vh;
-    border-radius: 10vw;
-    border: 1px solid black;
-    outline: none;
-    background-color: #5562eb;
-    color: white;
-    font-size: 5vw;
 }
+
 

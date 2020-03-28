@@ -7,80 +7,93 @@
     <title>Teste R-1</title>
     <script defer src='script.js'> </script>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/p1.css">
+    <link rel="stylesheet" href="/css/p2.css">
+    <link rel="stylesheet" href="/css/p3.css">
 </head>
 
 <body>
-    <section id="p1">
+    <section id="p1" style="display: flex">
         <h1>Teste R-1</h1>
-        <h2>Escolha o seu nivel de ensino</h2>
-        <form>
-            <label class="selecaoEstudos">Sem estudo
-                <input type="radio" name="estudo" id="semEst" value="0" >
-                <span class="checkmark"></span>
+        <h2>Teste não Verbal de Inteligência</h2>
+        <form class="formulario">
+            <h2>Escolha o seu nivel de ensino</h2>
+            <label class="radio">
+                <input type="radio" name="estudo" id="semEst" value="0">
+                <span>Sem estudo</span>
             </label>
-            <label class="selecaoEstudos">Ensino Fundamental
+            <label class="radio">
                 <input type="radio" name="estudo" id="estFun" value="1">
-                <span class="checkmark"></span>
+                <span>Ensino Fundamental</span>
             </label>
-            <label class="selecaoEstudos">Ensino Médio
+            <label class="radio">
                 <input type="radio" name="estudo" id="estMed" value="2">
-                <span class="checkmark"></span>
+                <span>Ensino Médio</span>
             </label>
-            <label class="selecaoEstudos">Ensino Superior
+            <label class="radio">
                 <input type="radio" name="estudo" id="estSup" value="3">
-                <span class="checkmark"></label>
+                <span>Ensino Superior</span>
             </label>
         </form>
         <input id="bntIniciar" type="button" value="Iniciar Teste" onclick="iniciar()">
     </section>
 
     <section id="p2" style="display: none">
-        <h2>Questão</h2>
-        <h3 id="numDaQuestao">1</h3>
-        <h3>Qual opção completa a imagem a baixo</h1>
-            <img id="imagem" src="/img/questoes/q1.jpg">
-            <form>
-                <article class="questoes">
-                    <input type="radio" name="resposta" value="A">
-                    <label for="RA">A</label>
-                    <img id="A" src="/img/respostas/1/A.jpg">
-                </article>
-                <article class="questoes">
-                    <input type="radio" name="resposta" value="B">
-                    <label for="RB">B</label><br>
-                    <img id="B" src="/img/respostas/1/B.jpg"><br>
-                </article>
-                <article class="questoes">
-                    <input type="radio" name="resposta" value="C">
-                    <label for="RC">C</label><br>
-                    <img id="C" src="/img/respostas/1/C.jpg"><br>
-                </article>
-                <article class="questoes">
-                    <input type="radio" name="resposta" value="D">
-                    <label for="RD">D</label><br>
-                    <img id="D" src="/img/respostas/1/D.jpg"><br>
-                </article>
-                <article>
-                    <input type="radio" name="resposta" value="E">
-                    <label for="RE">E</label><br>
-                    <img id="E" src="/img/respostas/1/E.jpg"><br>
-                </article>
-                <article class="questoes">
-                    <input type="radio" name="resposta" value="F">
-                    <label for="RF">F</label><br>
-                    <img id="F" src="/img/respostas/1/F.jpg"><br>
-                </article>
-            </form>
-            <input type="button" value="Proxima" onclick="prox()"><bR>
 
-            <input type="button" value="Voltar" onclick="voltar()"><br>
+        <section class="questBar">
+            <h1>Questão</h1>
+            <h2 id="numDaQuestao">1</h2>
+        </section>
+
+        <h2>Qual opção completa a imagem a baixo</h2>
+        <img id="imagemDaQuestao" src="/img/questoes/q1.jpg">
+        <form>
+            <label class="questoes">
+                <input type="radio" name="resposta" value="A">
+                <span for="RA">A</span>
+                <img id="A" src="/img/respostas/1/A.jpg">
+            </label>
+            <label class="questoes">
+                <input type="radio" name="resposta" value="B">
+                <span for="RB">B</span>
+                <img id="B" src="/img/respostas/1/B.jpg">
+            </label>
+            <label class="questoes">
+                <input type="radio" name="resposta" value="C">
+                <span for="RC">C</span>
+                <img id="C" src="/img/respostas/1/C.jpg">
+            </label>
+            <label class="questoes">
+                <input type="radio" name="resposta" value="D">
+                <span for="RD">D</span>
+                <img id="D" src="/img/respostas/1/D.jpg">
+            </label>
+            <label  class="questoes">
+                <input type="radio" name="resposta" value="E">
+                <span for="RE">E</span>
+                <img id="E" src="/img/respostas/1/E.jpg">
+            </label>
+            <label class="questoes">
+                <input type="radio" name="resposta" value="F">
+                <span for="RF">F</span>
+                <img id="F" src="/img/respostas/1/F.jpg">
+            </label>
+        </form>
+
+        <section class="nextBack">
+            <input type="button" value="Voltar" onclick="voltar()">
+            <input type="button" value="Proxima" onclick="prox()">
+        </section>
+
     </section>
 
     <section id="p3" style="display: none">
         <h1>resultado final</h1>
-        <h2>total de acertos</h2>
-        <h3 id='textAcertos'>0</h3>
-        <h3 id="aprovado"></h3>
+        <section class="container">
+            <h2>Seu total de acertos foi</h2>
+            <h2 id='textAcertos'>0</h2>
+        </section>
+            <h3 id="aprovado"></h3>
     </section>
 </body>
 

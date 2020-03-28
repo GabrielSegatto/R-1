@@ -4,14 +4,18 @@ var fim = document.querySelector('#p3');
 var nivelEstudo;
 function iniciar(){
     nivelEstudo = document.querySelector('input[name="estudo"]:checked').value;
+    if(nivelEstudo === null){
+        alert('Escolha seu nivel de estudo');
+        return
+    }
     inicio.style.display = 'none';
-    teste.style.display = 'block';
+    teste.style.display = 'flex';
 }
 
 var questao = 1;
 var respostas = [];
 var respostaAtual;
-var imagemDaQuestao = document.querySelector("#imagem");
+var imagemDaQuestao = document.querySelector("#imagemDaQuestao");
 var imagemA = document.querySelector("#A");
 var imagemB = document.querySelector("#B");
 var imagemC = document.querySelector("#C");
@@ -32,11 +36,15 @@ function attImg(n){
 
 function prox(){
     respostaAtual = document.querySelector('input[name="resposta"]:checked');
+    if(respostaAtual === null){
+        alert('Escolha uma resposta');
+        return
+    }
     respostas[questao-1] = respostaAtual.value;
     questao += 1;
     if(questao == 6){
         teste.style.display = 'none';
-        fim.style.display = 'block';
+        fim.style.display = 'flex';
         resultado(respostas);
         return;
     }
@@ -49,15 +57,26 @@ function voltar(){
 
 var gabarito = ['A', 'B', 'C', 'D', 'E'];
 var acertos = 0;
+var resultadoFinal = false;
 function resultado(array){
     for(var i = 0;i < array.length ; i++){
         if(respostas[i] == gabarito[i])acertos +=1;
     }
-    if(nivelEstudo == 0 && acertos >= 1) aprovado = true;
-    else if(nivelEstudo == 1 && acertos >= 2) aprovado = true;
-    else if(nivelEstudo == 2 && acertos >= 3) aprovado = true;
-    else if(nivelEstudo == 3 && acertos >= 4) aprovado = true;
-    if(aprovado)document.querySelector('#aprovado').innerText = "Você foi aprovado";
-    else document.querySelector('#aprovado').innerText = "Você foi reprovado";
+    console.log(acertos);
+    console.log(respostas);
+    if(nivelEstudo == 0 && acertos >= 1) resultadoFinal = true;
+    else if(nivelEstudo == 1 && acertos >= 2) resultadoFinal = true;
+    else if(nivelEstudo == 2 && acertos >= 3) resultadoFinal = true;
+    else if(nivelEstudo == 3 && acertos >= 4) resultadoFinal = true;
+    console.log(resultadoFinal)
+    textResultadoFinal = document.querySelector('#aprovado');
+    if(resultadoFinal){
+        textResultadoFinal.innerText = "Você foi aprovado";
+        textResultadoFinal.style.color = 'rgb(147, 214, 147)';
+    }
+    else{
+        textResultadoFinal.innerText = "Você foi reprovado";
+        textResultadoFinal.style.color = 'rgb(214, 147, 147)';
+    }
     document.querySelector('#textAcertos').innerText = acertos;
 }
